@@ -1,58 +1,61 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>لوحة التحكم</title><style>*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#e5e7eb;font:13px Tahoma,Arial}button,input,textarea{font:inherit}button{cursor:pointer;border:0}input,textarea{width:100%;padding:10px;border:1px solid #334155;border-radius:10px;background:#0f172a;color:#fff;outline:0}textarea{min-height:120px;resize:vertical}.g{position:fixed;inset:0;display:grid;place-items:center;background:#020617d9;z-index:9}.gc{width:min(92vw,340px);background:#111827;padding:18px;border:1px solid #334155;border-radius:18px;box-shadow:0 10px 40px #0008}.gc h2{margin:0 0 12px;font-size:18px}.gc p{margin:0 0 10px;color:#94a3b8}.w{padding:14px;max-width:1400px;margin:auto}.t{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}.t h1{margin:0;font-size:20px}.b{background:#7c3aed;color:#fff;padding:10px 14px;border-radius:10px}.b2{background:#0ea5e9;color:#fff;padding:10px 14px;border-radius:10px}.b3{background:#22c55e;color:#062a12;padding:10px 14px;border-radius:10px;font-weight:700}.b4{background:#f59e0b;color:#311f00;padding:10px 14px;border-radius:10px;font-weight:700}.m{margin:8px 0 12px;padding:10px 12px;border-radius:10px;background:#0f172a;border:1px solid #334155}.ok{color:#86efac}.er{color:#fca5a5}.k{display:grid;grid-template-columns:360px 1fr;gap:12px}.p{background:#111827;border:1px solid #334155;border-radius:16px;padding:12px}.s{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}.c{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:10px}.c b{display:block;font-size:18px;margin-top:4px}.l{max-height:75vh;overflow:auto}.i{padding:10px;border:1px solid #334155;background:#0f172a;border-radius:12px;margin-bottom:8px;cursor:pointer}.i:hover,.i.a{border-color:#8b5cf6;background:#1e1b4b}.nm{font-weight:700;font-size:14px}.sm{font-size:11px;color:#94a3b8;margin-top:4px;word-break:break-word}.f{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.f .full{grid-column:1/-1}.x{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tt{margin:0 0 8px;font-size:15px}.mini{font-size:11px;color:#94a3b8}.hr{height:1px;background:#334155;margin:12px 0}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:11px}.e{color:#94a3b8;padding:16px;text-align:center}.mut{color:#94a3b8}.topin{display:grid;grid-template-columns:1fr 180px;gap:8px;margin-bottom:10px}@media(max-width:980px){.k,.x,.f,.s,.topin{grid-template-columns:1fr}}</style></head><body>
-<div class="g" id="gate"><div class="gc"><h2>دخول لوحة التحكم</h2><p>أدخل الكود السري</p><input id="pass" type="password" placeholder="الكود"><div style="height:10px"></div><button class="b" id="go" style="width:100%">دخول</button><div id="gm" class="m" style="display:none"></div></div></div>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin</title><style>*{box-sizing:border-box}body{margin:0;font:13px Tahoma,Arial;background:#0b1020;color:#eef2ff}button,input,textarea{font:inherit}button{cursor:pointer;border:0}input,textarea{width:100%;padding:9px 10px;border:1px solid #334155;border-radius:10px;background:#0f172a;color:#fff;outline:0}textarea{min-height:110px;resize:vertical}.g{position:fixed;inset:0;display:grid;place-items:center;background:#020617e8;z-index:9}.bx{width:min(94vw,360px);background:#111827;border:1px solid #334155;border-radius:18px;padding:18px;box-shadow:0 20px 50px #0008}.w{max-width:1450px;margin:auto;padding:12px}.t{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.p,.u{background:#111827;border:1px solid #334155;border-radius:16px;padding:12px}.k{display:grid;grid-template-columns:420px 1fr;gap:12px}.top{display:grid;grid-template-columns:1fr 150px;gap:8px;margin-bottom:10px}.l{max-height:78vh;overflow:auto}.i{padding:10px;border:1px solid #334155;border-radius:14px;background:#0f172a;margin-bottom:8px}.i.a{border-color:#8b5cf6;background:#1d1836}.n{font-weight:700;font-size:14px}.s{font-size:11px;color:#a5b4fc;word-break:break-word;margin-top:5px}.r{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.b{background:#7c3aed;color:#fff;padding:9px 12px;border-radius:10px}.b2{background:#0ea5e9;color:#fff;padding:9px 12px;border-radius:10px}.b3{background:#22c55e;color:#04230f;padding:9px 12px;border-radius:10px;font-weight:700}.b4{background:#f59e0b;color:#351d00;padding:9px 12px;border-radius:10px;font-weight:700}.m{padding:10px 12px;border:1px solid #334155;background:#0f172a;border-radius:12px;margin:0 0 10px}.ok{color:#86efac}.er{color:#fca5a5}.f{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.f .x{grid-column:1/-1}.mini{font-size:11px;color:#a5b4fc}.hr{height:1px;background:#334155;margin:12px 0}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}.c{padding:10px;border:1px solid #334155;background:#0f172a;border-radius:12px}.c b{display:block;margin-top:5px;font-size:16px}.ch{max-height:320px;overflow:auto}.e{padding:18px;text-align:center;color:#94a3b8}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:11px}@media(max-width:980px){.k,.top,.cards,.f{grid-template-columns:1fr}}</style></head><body>
+<div class="g" id="gate"><div class="bx"><div style="font-size:18px;font-weight:700;margin-bottom:8px">دخول لوحة التحكم</div><div class="mini" style="margin-bottom:10px">أدخل الكود السري 2055 وسيتم تعيين المستخدم الحالي كأدمن داخل users</div><input id="pw" type="password" placeholder="الكود السري"><div style="height:10px"></div><button class="b" id="gin" style="width:100%">دخول</button><div id="gm" class="m" style="display:none;margin-top:10px"></div></div></div>
 
 <div class="w" id="app" hidden>
-<div class="t"><h1>لوحة تحكم الإحالات</h1><span class="tag">الدخول: 2055</span></div>
+<div class="t"><div style="font-size:20px;font-weight:800">لوحة تحكم المستخدمين والإحالات</div><div><span class="tag" id="me">...</span></div></div>
 <div id="msg" class="m">جاهز</div>
 
 <div class="k">
 <div class="p">
-<div class="topin"><input id="q" placeholder="بحث بالاسم أو البريد أو الكود"><div class="c"><div class="mini">إجمالي المستخدمين</div><b id="uc">0</b></div></div>
-<div class="l" id="L"></div>
+<div class="top"><input id="q" placeholder="بحث بالاسم أو البريد أو uid أو كود الإحالة"><div class="c"><div class="mini">إجمالي المستخدمين</div><b id="uc">0</b></div></div>
+<div class="l" id="list"></div>
 </div>
 
 <div>
-<div class="s">
-<div class="c"><div class="mini">المحدد</div><b id="snm">—</b></div>
-<div class="c"><div class="mini">الرصيد</div><b id="sbal">0</b></div>
-<div class="c"><div class="mini">كود الإحالة</div><b id="src">—</b></div>
-<div class="c"><div class="mini">عدد التابعين</div><b id="cc">0</b></div>
+<div class="cards">
+<div class="c"><div class="mini">المستخدم المحدد</div><b id="sn">—</b></div>
+<div class="c"><div class="mini">البريد</div><b id="se">—</b></div>
+<div class="c"><div class="mini">الرصيد</div><b id="sb">0</b></div>
+<div class="c"><div class="mini">عدد التابعين</div><b id="sc">0</b></div>
 </div>
 
-<div class="x">
-<div class="p">
-<h3 class="tt">تعديل المستخدم</h3>
+<div class="u">
+<div style="font-size:15px;font-weight:700;margin-bottom:8px">تعديل المستخدم المحدد</div>
 <div class="f">
-<input id="en" class="full" placeholder="الاسم">
-<input id="ee" class="full" placeholder="البريد">
-<input id="ep" placeholder="الهاتف">
-<input id="eu" placeholder="كود المستخدم">
-<input id="eb" type="number" step="0.01" placeholder="الرصيد">
-<input id="er" placeholder="كود الإحالة" readonly>
-<button class="b3 full" id="save">حفظ التعديل</button>
-</div>
+<input id="fid" class="x" placeholder="UID" readonly>
+<input id="fname" placeholder="الاسم">
+<input id="fmail" placeholder="البريد">
+<input id="fphone" placeholder="الهاتف">
+<input id="fbalance" type="number" step="0.01" placeholder="الرصيد">
+<input id="fuser" placeholder="userCode">
+<input id="fref" placeholder="referralCode">
+<input id="finv" placeholder="inviteCode">
+<input id="frefer" class="x" placeholder="referredBy">
+<button id="save" class="b3 x">حفظ التعديلات</button>
 </div>
 
-<div class="p">
-<h3 class="tt">إنشاء حساب إحالة فردي</h3>
-<div class="f">
-<input id="cn" class="full" placeholder="الاسم">
-<input id="ce" class="full" placeholder="البريد (اختياري)">
-<input id="cbal" type="number" step="0.01" class="full" placeholder="الرصيد">
-<button class="b2 full" id="add1">إنشاء حساب تابع للمستخدم المحدد</button>
-</div>
 <div class="hr"></div>
-<h3 class="tt">إنشاء حسابات إحالة جماعية</h3>
-<div class="mini" style="margin-bottom:6px">كل سطر بهذا الشكل: الاسم|البريد|الرصيد<br>أو: الاسم|الرصيد</div>
+
+<div style="font-size:15px;font-weight:700;margin-bottom:8px">توليد حساب تابع فردي</div>
+<div class="f">
+<input id="cn" placeholder="الاسم">
+<input id="ce" placeholder="بريد وهمي أو اتركه فارغًا">
+<input id="cb" type="number" step="0.01" placeholder="الرصيد">
+<button id="add1" class="b2 x">إنشاء حساب تابع لهذا المستخدم</button>
+</div>
+
+<div class="hr"></div>
+
+<div style="font-size:15px;font-weight:700;margin-bottom:8px">توليد حسابات تابعة جماعية</div>
+<div class="mini" style="margin-bottom:6px">كل سطر: الاسم|البريد|الرصيد أو الاسم|الرصيد</div>
 <textarea id="bulk" placeholder="محمد|m1@test.com|50&#10;أحمد|20&#10;سارة|s@test.com|75"></textarea>
 <div style="height:8px"></div>
-<button class="b4" id="addm">إنشاء جماعي للمستخدم المحدد</button>
-</div>
+<button id="addm" class="b4">إنشاء جماعي</button>
 </div>
 
-<div class="p" style="margin-top:12px">
-<h3 class="tt">الحسابات التابعة للمستخدم المحدد</h3>
-<div id="C"></div>
+<div class="u" style="margin-top:12px">
+<div style="font-size:15px;font-weight:700;margin-bottom:8px">الحسابات التابعة للمستخدم المحدد</div>
+<div id="children" class="ch"></div>
 </div>
 </div>
 </div>
@@ -60,21 +63,24 @@
 
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+import{getAuth,onAuthStateChanged,setPersistence,browserLocalPersistence}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
 import{getFirestore,collection,doc,setDoc,onSnapshot,writeBatch}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
-const F={apiKey:"AIzaSyBIOrNuF0NC5R2UizDd4yGBczeI-VIiR44",authDomain:"quantum-gain.firebaseapp.com",projectId:"quantum-gain",storageBucket:"quantum-gain.firebasestorage.app",messagingSenderId:"128304835273",appId:"1:128304835273:web:e0685d79fe569d7d43bb18",measurementId:"G-9EYFM4WGRC"},db=getFirestore(initializeApp(F)),$=q=>document.querySelector(q),H=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])),N=v=>+v||0,M=v=>"$"+N(v).toFixed(2),D=t=>t?new Date(typeof t=="object"&&t.toMillis?t.toMillis():t).toLocaleString("ar-EG"):"—",R=(p="ref")=>(p+Math.random().toString(36).slice(2,7)+Date.now().toString(36).slice(-5)).replace(/\W/g,"").slice(0,p=="U"?6:14),EM=n=>(String(n||"user").trim().toLowerCase().replace(/\s+/g,"").replace(/[^\w]/g,"")||"user")+Date.now().toString().slice(-6)+"@ref.local";
-let U=[],S=null,ON=0;
-const msg=(t,e=0,m="#msg")=>{let x=$(m);x.innerHTML='<span class="'+(e?"er":"ok")+'">'+t+"</span>";x.style.display="block"};
-function childs(u){if(!u||!u.referralCode)return[];let c=(u.referralCode||"").toLowerCase();return U.filter(x=>String(x.referredBy||x.inviteCode||"").toLowerCase()==c).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))}
-function fill(){if(!S){$("#snm").textContent="—";$("#sbal").textContent="0";$("#src").textContent="—";$("#cc").textContent="0";["#en","#ee","#ep","#eu","#eb","#er"].forEach(i=>$(i).value="");$("#C").innerHTML='<div class=e>اختر مستخدمًا من القائمة</div>';return}$("#snm").textContent=S.name||S.email||S.phone||S.userCode||"بدون اسم";$("#sbal").textContent=M(S.balance);$("#src").textContent=S.referralCode||"—";$("#cc").textContent=childs(S).length;$("#en").value=S.name||"";$("#ee").value=S.email||"";$("#ep").value=S.phone||"";$("#eu").value=S.userCode||"";$("#eb").value=N(S.balance);$("#er").value=S.referralCode||"";let a=childs(S);$("#C").innerHTML=a.length?a.map(v=>'<div class=i data-open="'+v.id+'"><div class=nm>'+H(v.name||v.email||v.phone||v.userCode||"بدون اسم")+'</div><div class=sm>'+H(v.email||"—")+' • '+M(v.balance)+' • '+H(v.userCode||"—")+' • '+D(v.createdAt)+"</div></div>").join(""):'<div class=e>لا توجد حسابات تابعة بعد</div>'}
-function render(){let q=$("#q").value.trim().toLowerCase(),a=[...U].sort((x,y)=>(y.createdAt||0)-(x.createdAt||0)).filter(v=>!q||[v.name,v.email,v.phone,v.userCode,v.referralCode,v.referredBy,v.inviteCode].join(" ").toLowerCase().includes(q));$("#uc").textContent=U.length;$("#L").innerHTML=a.length?a.map(v=>'<div class="i'+(S&&S.id==v.id?" a":"")+'" data-open="'+v.id+'"><div class=nm>'+H(v.name||v.email||v.phone||v.userCode||"بدون اسم")+'</div><div class=sm>'+H(v.email||"—")+' • '+M(v.balance)+' • '+H(v.userCode||"—")+' • '+D(v.createdAt)+'</div></div>').join(""):'<div class=e>لا يوجد مستخدمون</div>';fill()}
+const F={apiKey:"AIzaSyBIOrNuF0NC5R2UizDd4yGBczeI-VIiR44",authDomain:"quantum-gain.firebaseapp.com",projectId:"quantum-gain",storageBucket:"quantum-gain.firebasestorage.app",messagingSenderId:"128304835273",appId:"1:128304835273:web:e0685d79fe569d7d43bb18",measurementId:"G-9EYFM4WGRC"},app=initializeApp(F),auth=getAuth(app),db=getFirestore(app),$=q=>document.querySelector(q),H=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])),N=v=>+v||0,M=v=>"$"+N(v).toFixed(2),T=t=>t?(new Date(typeof t=="object"&&t.toMillis?t.toMillis():t)).toLocaleString("ar-EG"):"—",RID=p=>(p+Math.random().toString(36).slice(2,7)+Date.now().toString(36).slice(-5)).replace(/\W/g,"").slice(0,p=="U"?6:14),MAIL=n=>(String(n||"user").trim().toLowerCase().replace(/\s+/g,"").replace(/[^\w]/g,"")||"user")+Date.now().toString().slice(-6)+"@fake.local";
+let ME=null,U=[],S=null,ON=0;
+const msg=(t,e=0,a="#msg")=>{let x=$(a);x.innerHTML='<span class="'+(e?"er":"ok")+'">'+t+"</span>";x.style.display="block"};
+function kids(u){if(!u||!u.referralCode)return[];let c=(u.referralCode||"").toLowerCase(),m={};U.forEach(x=>{let a=String(x.referredBy||"").toLowerCase(),b=String(x.inviteCode||"").toLowerCase();if(a==c||b==c)m[x.id]=x});return Object.values(m).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))}
+async function ensureRef(u){if(u.referralCode)return u.referralCode;let r=RID("ref");await setDoc(doc(db,"users",u.id),{referralCode:r,userCode:u.userCode||("U"+Math.floor(1e4+Math.random()*9e4)),createdAt:u.createdAt||Date.now()},{merge:1});u.referralCode=r;return r}
+function fill(){if(!S){$("#sn").textContent="—";$("#se").textContent="—";$("#sb").textContent="0";$("#sc").textContent="0";["#fid","#fname","#fmail","#fphone","#fbalance","#fuser","#fref","#finv","#frefer"].forEach(i=>$(i).value="");$("#children").innerHTML='<div class="e">اضغط تعديل على أي مستخدم</div>';return}let k=kids(S);$("#sn").textContent=S.name||S.userCode||S.email||S.phone||"بدون اسم";$("#se").textContent=S.email||"—";$("#sb").textContent=M(S.balance);$("#sc").textContent=k.length;$("#fid").value=S.id||"";$("#fname").value=S.name||"";$("#fmail").value=S.email||"";$("#fphone").value=S.phone||"";$("#fbalance").value=N(S.balance);$("#fuser").value=S.userCode||"";$("#fref").value=S.referralCode||"";$("#finv").value=S.inviteCode||"";$("#frefer").value=S.referredBy||"";$("#children").innerHTML=k.length?k.map(v=>'<div class="i"><div class="n">'+H(v.name||v.email||v.phone||v.userCode||"بدون اسم")+'</div><div class="s">UID: '+H(v.id)+'<br>البريد: '+H(v.email||"—")+'<br>الرصيد: '+M(v.balance)+'<br>userCode: '+H(v.userCode||"—")+'<br>referralCode: '+H(v.referralCode||"—")+'<br>createdAt: '+H(T(v.createdAt))+'</div></div>').join(""):'<div class="e">لا يوجد تابعين لهذا المستخدم</div>'}
+function render(){let q=$("#q").value.trim().toLowerCase(),a=[...U].sort((x,y)=>(y.createdAt||0)-(x.createdAt||0)).filter(v=>!q||[v.id,v.name,v.email,v.phone,v.userCode,v.referralCode,v.inviteCode,v.referredBy].join(" ").toLowerCase().includes(q));$("#uc").textContent=U.length;$("#list").innerHTML=a.length?a.map(v=>'<div class="i'+(S&&S.id==v.id?" a":"")+'"><div class="n">'+H(v.name||v.email||v.phone||v.userCode||"بدون اسم")+'</div><div class="s">UID: '+H(v.id)+'<br>البريد: '+H(v.email||"—")+'<br>الرصيد: '+M(v.balance)+'<br>userCode: '+H(v.userCode||"—")+'<br>referralCode: '+H(v.referralCode||"—")+'<br>inviteCode: '+H(v.inviteCode||"—")+'<br>referredBy: '+H(v.referredBy||"—")+'<br>createdAt: '+H(T(v.createdAt))+'</div><div class="r"><button class="b" data-ed="'+v.id+'">تعديل</button></div></div>').join(""):'<div class="e">لا يوجد مستخدمون</div>';fill()}
 function pick(id){S=U.find(x=>x.id==id)||null;render()}
-async function ensureRef(u){if(u.referralCode)return u.referralCode;let c=R("ref"),x={referralCode:c,userCode:u.userCode||("U"+Math.floor(1e4+Math.random()*9e4)),createdAt:u.createdAt||Date.now()};await setDoc(doc(db,"users",u.id),x,{merge:1});u.referralCode=c;return c}
-function start(){if(ON)return;ON=1;onSnapshot(collection(db,"users"),s=>{U=s.docs.map(d=>({id:d.id,...d.data()}));if(S)S=U.find(x=>x.id==S.id)||null;render()},e=>msg("خطأ بالاتصال بفيرباس: "+e.message,1))}
-$("#go").onclick=()=>{if($("#pass").value==="2055"){$("#gate").remove();$("#app").hidden=0;start()}else msg("الكود غير صحيح",1,"#gm")};
-$("#pass").addEventListener("keydown",e=>e.key=="Enter"&&$("#go").click());
+function start(){if(ON)return;ON=1;onSnapshot(collection(db,"users"),s=>{U=s.docs.map(d=>({id:d.id,...d.data()}));if(S)S=U.find(x=>x.id==S.id)||null;render()},e=>msg("خطأ في قراءة users: "+e.message,1))}
+await setPersistence(auth,browserLocalPersistence).catch(()=>{});
+onAuthStateChanged(auth,u=>{if(!u)return location.href="index.html";ME=u;$("#me").textContent=u.email||u.uid});
+$("#gin").onclick=async()=>{if($("#pw").value!=="2055")return msg("الكود غير صحيح",1,"#gm");if(!ME)return msg("انتظر تحميل تسجيل الدخول",1,"#gm");try{await setDoc(doc(db,"users",ME.uid),{email:ME.email||"",isAdmin:1,role:"admin",adminBySecret:1,adminAt:Date.now()},{merge:1});$("#gate").remove();$("#app").hidden=0;start();msg("تم الدخول وتعيين المستخدم الحالي كأدمن")}catch(e){msg("فشل تعيين الأدمن: "+e.message,1,"#gm")}};
+$("#pw").addEventListener("keydown",e=>e.key=="Enter"&&$("#gin").click());
 $("#q").oninput=render;
-document.addEventListener("click",e=>{let x=e.target.closest("[data-open]");if(x)pick(x.dataset.open)});
-$("#save").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);try{await setDoc(doc(db,"users",S.id),{name:$("#en").value.trim(),email:$("#ee").value.trim(),phone:$("#ep").value.trim(),userCode:$("#eu").value.trim()||S.userCode||("U"+Math.floor(1e4+Math.random()*9e4)),balance:N($("#eb").value),createdAt:S.createdAt||Date.now()},{merge:1});msg("تم حفظ التعديل")}catch(e){msg("فشل الحفظ: "+e.message,1)}};
-$("#add1").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);try{let p=await ensureRef(S),n=$("#cn").value.trim(),e=$("#ce").value.trim()||EM(n),b=N($("#cbal").value),r=doc(collection(db,"users"));await setDoc(r,{name:n,email:e,phone:"",loginType:"admin_ref",inviteCode:p,referredBy:p,referralCode:R("ref"),userCode:"U"+Math.floor(1e4+Math.random()*9e4),balance:b,todayProfit:0,todayPct:0,createdAt:Date.now()});$("#cn").value=$("#ce").value=$("#cbal").value="";msg("تم إنشاء الحساب التابع")}catch(e){msg("فشل الإنشاء: "+e.message,1)}};
-$("#addm").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);let t=$("#bulk").value.trim();if(!t)return msg("أدخل البيانات الجماعية أولًا",1);try{let p=await ensureRef(S),ls=t.split(/\n+/).map(v=>v.trim()).filter(Boolean),b=writeBatch(db),c=0;for(let z of ls){let a=z.split("|").map(v=>v.trim()),n="",e="",bal=0;if(a.length>=3){n=a[0];e=a[1];bal=a[2]}else if(a.length==2){/@/.test(a[0])?(e=a[0],bal=a[1]):(n=a[0],bal=a[1])}else n=a[0];e=e||EM(n);let r=doc(collection(db,"users"));b.set(r,{name:n,email:e,phone:"",loginType:"admin_ref",inviteCode:p,referredBy:p,referralCode:R("ref"),userCode:"U"+Math.floor(1e4+Math.random()*9e4),balance:N(bal),todayProfit:0,todayPct:0,createdAt:Date.now()});c++}await b.commit();$("#bulk").value="";msg("تم إنشاء "+c+" حساب/حسابات")}catch(e){msg("فشل الإنشاء الجماعي: "+e.message,1)}};
+document.addEventListener("click",e=>{let b=e.target.closest("[data-ed]");if(b)pick(b.dataset.ed)});
+$("#save").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);try{await setDoc(doc(db,"users",S.id),{name:$("#fname").value.trim(),email:$("#fmail").value.trim(),phone:$("#fphone").value.trim(),balance:N($("#fbalance").value),userCode:$("#fuser").value.trim(),referralCode:$("#fref").value.trim(),inviteCode:$("#finv").value.trim(),referredBy:$("#frefer").value.trim()},{merge:1});msg("تم حفظ التعديلات")}catch(e){msg("فشل الحفظ: "+e.message,1)}};
+$("#add1").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);try{let p=await ensureRef(S),n=$("#cn").value.trim()||"عضو تابع",e=$("#ce").value.trim()||MAIL(n),b=N($("#cb").value),r=doc(collection(db,"users"));await setDoc(r,{name:n,email:e,phone:"",loginType:"admin_fake",isFake:1,inviteCode:p,referredBy:p,referralCode:RID("ref"),userCode:"U"+Math.floor(1e4+Math.random()*9e4),balance:b,todayProfit:0,todayPct:0,createdAt:Date.now()});$("#cn").value=$("#ce").value=$("#cb").value="";msg("تم إنشاء حساب تابع")}catch(e){msg("فشل الإنشاء: "+e.message,1)}};
+$("#addm").onclick=async()=>{if(!S)return msg("اختر مستخدمًا أولًا",1);let t=$("#bulk").value.trim();if(!t)return msg("أدخل البيانات الجماعية",1);try{let p=await ensureRef(S),ls=t.split(/\n+/).map(v=>v.trim()).filter(Boolean),b=writeBatch(db),c=0;for(let z of ls){let a=z.split("|").map(v=>v.trim()),n="",e="",bal=0;if(a.length>=3){n=a[0];e=a[1];bal=a[2]}else if(a.length==2){/@/.test(a[0])?(e=a[0],bal=a[1]):(n=a[0],bal=a[1])}else n=a[0];e=e||MAIL(n);let r=doc(collection(db,"users"));b.set(r,{name:n||"عضو تابع",email:e,phone:"",loginType:"admin_fake",isFake:1,inviteCode:p,referredBy:p,referralCode:RID("ref"),userCode:"U"+Math.floor(1e4+Math.random()*9e4),balance:N(bal),todayProfit:0,todayPct:0,createdAt:Date.now()});c++}await b.commit();$("#bulk").value="";msg("تم إنشاء "+c+" حساب تابع")}catch(e){msg("فشل الإنشاء الجماعي: "+e.message,1)}};
 </script></body></html>
