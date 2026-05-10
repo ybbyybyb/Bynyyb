@@ -1,113 +1,33 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>لوحة التحكم</title><meta name="theme-color" content="#12081f"><style>:root{--a:#12081f;--b:#1a0f2b;--c:#24153b;--d:#372255;--t:#f5f3ff;--m:#c4b5fd;--x:#8b5cf6;--y:#5b21b6;--g:#22c55e;--r:#ef4444;--o:#f59e0b}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:linear-gradient(180deg,var(--b),var(--a));color:var(--t);font:12px/1.6 Tahoma,Arial}button,input,textarea{font:inherit;outline:0;border:0}img{display:block;max-width:100%}.h{display:none!important}.ov{position:fixed;inset:0;background:rgba(10,5,20,.82);display:grid;place-items:center;z-index:99;padding:16px}.lg{width:min(360px,100%);background:rgba(29,18,49,.96);border:1px solid #4d3274;border-radius:22px;padding:18px;box-shadow:0 20px 40px rgba(0,0,0,.35)}.lg h2{margin:0 0 12px;font-size:18px;text-align:center}.in,.ta{width:100%;background:#1d1231;color:#fff;border:1px solid #4d3274;border-radius:14px;padding:12px}.ta{min-height:88px;resize:vertical}.bt{height:44px;border-radius:14px;background:linear-gradient(180deg,var(--x),var(--y));color:#fff;font-weight:900;cursor:pointer}.bt2{height:40px;border-radius:12px;background:#2b1a45;color:#fff;border:1px solid #4d3274;cursor:pointer}.app{padding:12px 10px 90px}.top{display:flex;align-items:center;gap:8px;justify-content:space-between;margin-bottom:10px}.ttl{font-size:18px;font-weight:900}.tabs{display:flex;gap:6px;flex-wrap:wrap}.tb{padding:10px 12px;border-radius:12px;background:#231438;border:1px solid #3f275f;color:#d8cef5;cursor:pointer}.tb.on{background:linear-gradient(180deg,#8b5cf6,#5b21b6);color:#fff;border-color:#8f69d5}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.sm{background:rgba(29,18,49,.72);border:1px solid rgba(180,143,255,.28);border-radius:16px;padding:12px}.sm b{display:block;font-size:19px}.sm span{color:#d8cef5;font-size:11px}.bar{display:flex;gap:8px;margin:10px 0}.bar input{flex:1;height:42px;background:#1d1231;color:#fff;border:1px solid #4d3274;border-radius:14px;padding:0 12px}.sec{display:grid;gap:10px}.card{background:rgba(29,18,49,.62);border:1px solid rgba(180,143,255,.28);border-radius:18px;padding:12px;box-shadow:0 8px 18px rgba(0,0,0,.18)}.rw{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.meta,.mini{color:#d8cef5;font-size:11px}.addr{direction:ltr;text-align:left;background:#211434;border:1px solid #3a245b;padding:9px;border-radius:12px;word-break:break-all;margin-top:8px}.act{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.ok,.no,.sv{height:38px;padding:0 14px;border-radius:12px;color:#fff;font-weight:900;cursor:pointer}.ok{background:linear-gradient(180deg,#22c55e,#15803d)}.no{background:linear-gradient(180deg,#ef4444,#991b1b)}.sv{background:linear-gradient(180deg,#8b5cf6,#5b21b6)}.bad{padding:4px 10px;border-radius:999px;font-size:10px;font-weight:900}.pending{background:#3b3007;color:#fde047;border:1px solid #8a6d00}.approved{background:#0e2f18;color:#4ade80;border:1px solid #166534}.rejected{background:#2a1020;color:#ffb4b4;border:1px solid #5e2338}.ph{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.ph img{width:100%;height:180px;object-fit:cover;border-radius:14px;background:#fff}.empty{text-align:center;color:#cbbcf0;padding:18px;border:1px dashed #4d3274;border-radius:16px}.toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);background:#231438;border:1px solid #4d3274;color:#fff;padding:10px 14px;border-radius:12px;opacity:0;visibility:hidden;transition:.2s;z-index:120}.toast.s{opacity:1;visibility:visible}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:640px){.grid,.ph{grid-template-columns:1fr}}</style></head><body>
-<div class="ov" id="ov"><div class="lg"><h2>دخول لوحة التحكم</h2><input class="in" id="pin" type="password" placeholder="أدخل الكود السري"><div style="height:10px"></div><button class="bt" id="login">دخول</button><div id="lmsg" class="mini" style="margin-top:10px;text-align:center"></div></div></div>
-<div class="app">
-<div class="top"><div class="ttl">لوحة التحكم</div><div class="tabs"><button class="tb on" data-t="dep">الإيداع</button><button class="tb" data-t="wd">السحب</button><button class="tb" data-t="kyc">التوثيق</button><button class="tb" data-t="set">الإعدادات</button><button class="tb" id="lock">قفل</button></div></div>
-<div class="grid">
-<div class="sm"><b id="nDep">0</b><span>طلبات إيداع معلقة</span></div>
-<div class="sm"><b id="nWd">0</b><span>طلبات سحب معلقة</span></div>
-<div class="sm"><b id="nKyc">0</b><span>طلبات توثيق معلقة</span></div>
-<div class="sm"><b id="nUsers">0</b><span>إجمالي المستخدمين</span></div>
-</div>
-<div class="bar"><input id="q" placeholder="بحث بالبريد أو UID أو العنوان أو الشبكة"><button class="bt2" id="reload">تحديث العرض</button></div>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>لوحة تحكم الإيداعات</title><style>*{box-sizing:border-box;font-family:Tahoma,Arial}body{margin:0;background:#12081f;color:#fff}a{text-decoration:none;color:inherit}.w{max-width:1200px;margin:auto;padding:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.ttl{font-size:22px;font-weight:900}.x,.i,.b{background:#231438;border:1px solid #4d3274;color:#fff;border-radius:14px}.x{padding:10px 14px}.s{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.k{padding:14px}.k b{display:block;font-size:22px;margin-bottom:4px}.i{width:100%;padding:12px;margin-bottom:12px}.r{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}.c{background:rgba(29,18,49,.8);border:1px solid rgba(180,143,255,.28);border-radius:18px;padding:14px;box-shadow:0 10px 24px rgba(0,0,0,.22)}.h{display:flex;justify-content:space-between;gap:10px;align-items:start}.amt{font-size:22px;font-weight:900;color:#c4b5fd}.st{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}.p{background:#3b2a12;color:#ffd36b}.a{background:#123621;color:#86efac}.rj{background:#3e1616;color:#fca5a5}.g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.t{font-size:11px;color:#cbbcf0}.v{font-size:13px;font-weight:800;word-break:break-word}.ad{direction:ltr;text-align:left;background:rgba(255,255,255,.05);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);word-break:break-all}.ac{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.b{padding:10px 12px;cursor:pointer}.b.ok{background:#163a26;border-color:#245f3a}.b.no{background:#4a1717;border-color:#7a2b2b}.b.pe{background:#3b2a12;border-color:#6f5120}.b.cp{background:#2b1a45}.e{padding:28px;text-align:center;color:#cbbcf0}.m{position:fixed;inset:0;background:rgba(0,0,0,.75);display:grid;place-items:center;padding:14px;z-index:9}.mb{width:100%;max-width:360px;background:#1a0f2b;border:1px solid #4d3274;border-radius:18px;padding:18px}.mb h3{margin:0 0 12px}.mb input{width:100%;height:46px;border:1px solid #4d3274;background:#231438;color:#fff;border-radius:12px;padding:0 12px;direction:ltr;text-align:left}.br{display:flex;gap:8px;margin-top:10px}.br button{flex:1;height:42px;border:0;border-radius:12px;color:#fff;font-weight:800;cursor:pointer}.ok2{background:linear-gradient(180deg,#8b5cf6,#5b21b6)}.msg{font-size:12px;color:#ffb4b4;margin-top:8px}.to{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#231438;border:1px solid #4d3274;padding:10px 14px;border-radius:12px;opacity:0;visibility:hidden;transition:.2s}.to.s{opacity:1;visibility:visible}@media(max-width:800px){.s{grid-template-columns:1fr 1fr}}@media(max-width:520px){.s,.g{grid-template-columns:1fr}}</style></head><body>
+<div class="m" id="login"><div class="mb"><h3>دخول لوحة التحكم</h3><input id="pin" type="password" placeholder="123456"><div class="br"><button class="ok2" id="enter">دخول</button><button onclick="location.reload()">إلغاء</button></div><div class="msg" id="lmsg"></div></div></div>
 
-<div class="sec" id="dep"></div>
-<div class="sec h" id="wd"></div>
-<div class="sec h" id="kyc"></div>
-<div class="sec h" id="set">
-<div class="card">
-<div class="rw"><b>عنوان الإيداع الحالي</b><span class="mini">المسار: config / deposit</span></div>
-<div style="height:8px"></div>
-<textarea class="ta" id="depAddr" placeholder="عنوان USDT/TRC20"></textarea>
-<div class="act"><button class="sv" id="saveAddr">حفظ عنوان الإيداع</button></div>
+<div class="w">
+<div class="top"><div class="ttl">لوحة تحكم الإيداعات</div><div class="x" id="live">غير متصل</div></div>
+<div class="s">
+<div class="c k"><b id="nAll">0</b><span>كل الطلبات</span></div>
+<div class="c k"><b id="nPen">0</b><span>قيد المعالجة</span></div>
+<div class="c k"><b id="nApp">0</b><span>مقبول</span></div>
+<div class="c k"><b id="nRej">0</b><span>مرفوض</span></div>
 </div>
-<div class="card mini">قبول الإيداع يزيد رصيد المستخدم مباشرة، وقبول السحب يخصم الرصيد مباشرة، وقبول التوثيق يغيّر <b>kycStatus</b> إلى <b>approved</b>، والرفض يغيّره إلى <b>rejected</b>.</div>
+<input class="i" id="q" placeholder="بحث بالإيميل أو رقم الطلب أو العنوان أو الحالة">
+<div class="r" id="rows"><div class="e c">أدخل الكود أولًا</div></div>
 </div>
-</div>
-<div class="toast" id="t"></div>
+
+<div class="to" id="to">تم النسخ</div>
 
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-import{getFirestore,collection,collectionGroup,doc,setDoc,getDoc,onSnapshot,updateDoc,runTransaction,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
-
-const cfg={apiKey:"AIzaSyBIOrNuF0NC5R2UizDd4yGBczeI-VIiR44",authDomain:"quantum-gain.firebaseapp.com",projectId:"quantum-gain",storageBucket:"quantum-gain.firebasestorage.app",messagingSenderId:"128304835273",appId:"1:128304835273:web:e0685d79fe569d7d43bb18",measurementId:"G-9EYFM4WGRC"};
-const app=initializeApp(cfg),db=getFirestore(app),$=e=>document.getElementById(e),Q=(e,p=document)=>[...p.querySelectorAll(e)],PIN="123456";
-let D=[],W=[],U=[],K=[],RD=[],RW=[],RK=[],tab="dep",off=[];
-
-const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-const M=n=>"$"+(+n||0).toFixed(2);
-const Tm=v=>v?.toMillis?v.toMillis():v?.seconds?v.seconds*1e3:0;
-const Dt=(v,t)=>t||((x=Tm(v))?new Date(x).toLocaleString("ar-EG"):"-"); let x=0;
-const B=s=>`<span class="bad ${s||"pending"}">${s=="approved"?"مقبول":s=="rejected"?"مرفوض":"قيد الانتظار"}</span>`;
-const toast=m=>{t.textContent=m;t.classList.add("s");clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove("s"),1700)};
-const hit=(...a)=>!(q.value||"").trim()||a.join(" ").toLowerCase().includes(q.value.trim().toLowerCase());
-const sort=a=>a.sort((x,y)=>Tm(y.createdAt||y.kycSubmittedAt||y.updatedAt)-Tm(x.createdAt||x.kycSubmittedAt||x.updatedAt));
-const stat=()=>{nDep.textContent=D.filter(x=>(x.status||"pending")=="pending").length;nWd.textContent=W.filter(x=>(x.status||"pending")=="pending").length;nKyc.textContent=K.filter(x=>(x.kycStatus||"")=="pending").length;nUsers.textContent=U.length};
-const sw=s=>{tab=s;Q(".tb").forEach(b=>b.classList.toggle("on",b.dataset.t==s));["dep","wd","kyc","set"].forEach(id=>$(id).classList.toggle("h",id!=s))};
-
-function depHtml(){
-RD=sort(D.filter(x=>hit(x.email,x.uid,x.depositAddress,x.network,x.method,x.amount))).map(x=>x);
-dep.innerHTML=RD.length?RD.map((x,i)=>`<div class="card"><div class="rw"><b>${M(x.amount)} - ${E(x.method||"إيداع")}</b>${B(x.status||"pending")}</div><div class="meta">${E(x.email||"-")} • ${E(x.uid||"-")}</div><div class="meta">${E(x.network||"-")} • ${Dt(x.createdAt,x.createdAtText)}</div><div class="addr">${E(x.depositAddress||"-")}</div>${x.bonusEnabled?`<div class="mini">المكافأة: مفعلة</div>`:""}${x.adminReason?`<div class="mini">السبب: ${E(x.adminReason)}</div>`:""}<div class="act">${(x.status||"pending")=="pending"?`<button class="ok" data-i="${i}" data-a="ok">قبول</button><button class="no" data-i="${i}" data-a="no">رفض</button>`:""}</div></div>`).join(""):`<div class="empty">لا توجد طلبات إيداع مطابقة</div>`
-}
-function wdHtml(){
-RW=sort(W.filter(x=>hit(x.email,x.uid,x.address,x.network,x.amount))).map(x=>x);
-wd.innerHTML=RW.length?RW.map((x,i)=>`<div class="card"><div class="rw"><b>${M(x.amount)} - ${E(x.network||"سحب")}</b>${B(x.status||"pending")}</div><div class="meta">${E(x.email||"-")} • ${E(x.uid||"-")}</div><div class="meta">الرصيد قبل السحب: ${M(x.balanceBefore)} • ${Dt(x.createdAt)}</div><div class="addr">${E(x.address||"-")}</div>${x.adminReason?`<div class="mini">السبب: ${E(x.adminReason)}</div>`:""}<div class="act">${(x.status||"pending")=="pending"?`<button class="ok" data-i="${i}" data-a="ok">قبول</button><button class="no" data-i="${i}" data-a="no">رفض</button>`:""}</div></div>`).join(""):`<div class="empty">لا توجد طلبات سحب مطابقة</div>`
-}
-function kycHtml(){
-K=U.filter(x=>x.kycStatus||x.idFront||x.idBack);
-RK=sort(K.filter(x=>hit(x.e,x.email,x.uid,x.publicId,x.f,x.l,x.country,x.r,x.kycStatus))).map(x=>x);
-kyc.innerHTML=RK.length?RK.map((x,i)=>`<div class="card"><div class="rw"><b>${E((x.f||"")+" "+(x.l||""))||"بدون اسم"}</b>${B(x.kycStatus||"pending")}</div><div class="meta">${E(x.e||x.email||"-")} • UID: ${E(x.uid||x.id||"-")}</div><div class="meta">ID عام: ${E(x.publicId||"-")} • ${E(x.country||"-")} • ${E(x.r||"-")}</div><div class="meta">تاريخ الميلاد: ${E(x.d||"-")} • تاريخ الطلب: ${Dt(x.kycSubmittedAt)}</div>${x.idFront||x.idBack?`<div class="ph">${x.idFront?`<img loading="lazy" src="${x.idFront}" alt="">`:`<div class="empty">لا توجد صورة أمامية</div>`}${x.idBack?`<img loading="lazy" src="${x.idBack}" alt="">`:`<div class="empty">لا توجد صورة خلفية</div>`}</div>`:""}${x.kycRejectReason?`<div class="mini">سبب الرفض: ${E(x.kycRejectReason)}</div>`:""}<div class="act">${(x.kycStatus||"pending")=="pending"?`<button class="ok" data-i="${i}" data-a="ok">قبول</button><button class="no" data-i="${i}" data-a="no">رفض</button>`:""}</div></div>`).join(""):`<div class="empty">لا توجد طلبات توثيق مطابقة</div>`
-}
-const render=()=>{depHtml();wdHtml();kycHtml();stat()}
-
-async function depAct(x,ok){
-if(!x)return; let rs=ok?"":prompt("سبب الرفض","")||"";
-try{
-await runTransaction(db,async tr=>{
-let s=await tr.get(x.ref),d=s.data(); if(!d||(d.status||"pending")!="pending")throw 0;
-if(ok){
-let ur=doc(db,"users",d.uid),us=await tr.get(ur),bal=+((us.data()||{}).balance||0),am=+(d.amount||0);
-tr.set(ur,{balance:bal+am,updatedAt:serverTimestamp()},{merge:true});
-tr.update(x.ref,{status:"approved",credited:true,processedAt:serverTimestamp(),adminReason:"",adminBy:"panel"});
-}else tr.update(x.ref,{status:"rejected",processedAt:serverTimestamp(),adminReason:rs,adminBy:"panel"});
-});
-toast(ok?"تم قبول الإيداع":"تم رفض الإيداع");
-}catch{toast("تعذر تنفيذ العملية")}
-}
-async function wdAct(x,ok){
-if(!x)return; let rs=ok?"":prompt("سبب الرفض","")||"";
-try{
-await runTransaction(db,async tr=>{
-let s=await tr.get(x.ref),d=s.data(); if(!d||(d.status||"pending")!="pending")throw 0;
-if(ok){
-let ur=doc(db,"users",d.uid),us=await tr.get(ur),bal=+((us.data()||{}).balance||0),am=+(d.amount||0);
-if(bal<am)throw 0;
-tr.set(ur,{balance:bal-am,updatedAt:serverTimestamp()},{merge:true});
-tr.update(x.ref,{status:"approved",debited:true,processedAt:serverTimestamp(),adminReason:"",adminBy:"panel"});
-}else tr.update(x.ref,{status:"rejected",processedAt:serverTimestamp(),adminReason:rs,adminBy:"panel"});
-});
-toast(ok?"تم قبول السحب":"تم رفض السحب");
-}catch{toast("فشل العملية أو الرصيد غير كافٍ")}
-}
-async function kycAct(x,ok){
-if(!x)return; let rs=ok?"":prompt("سبب رفض التوثيق","")||"";
-try{await updateDoc(x.ref,{kycStatus:ok?"approved":"rejected",kycReviewedAt:serverTimestamp(),kycRejectReason:ok?"":rs,updatedAt:serverTimestamp()});toast(ok?"تم قبول التوثيق":"تم رفض التوثيق")}catch{toast("تعذر تحديث التوثيق")}}
-async function loadAddr(){try{let s=await getDoc(doc(db,"config","deposit"));depAddr.value=s.exists()?s.data().address||"":""}catch{}}
-function start(){
-off.push(onSnapshot(collectionGroup(db,"deposit_requests"),s=>{D=s.docs.map(d=>({id:d.id,ref:d.ref,...d.data()}));render()}));
-off.push(onSnapshot(collection(db,"withdraw_requests"),s=>{W=s.docs.map(d=>({id:d.id,ref:d.ref,...d.data()}));render()}));
-off.push(onSnapshot(collection(db,"users"),s=>{U=s.docs.map(d=>({id:d.id,ref:d.ref,...d.data()}));render()}));
-off.push(onSnapshot(doc(db,"config","deposit"),s=>{depAddr.value=s.exists()?s.data().address||"":""}));
-}
-
-login.onclick=()=>{if(pin.value===PIN){sessionStorage.adminOk=1;ov.classList.add("h");start();loadAddr()}else lmsg.textContent="الكود غير صحيح"};
-pin.addEventListener("keydown",e=>e.key=="Enter"&&login.click());
-if(sessionStorage.adminOk==1){ov.classList.add("h");start();loadAddr()}
-Q(".tb").forEach(b=>b.onclick=()=>b.dataset.t&&sw(b.dataset.t));
-lock.onclick=()=>{sessionStorage.removeItem("adminOk");location.reload()};
-q.oninput=render;reload.onclick=render;
-
-dep.onclick=e=>{let b=e.target.closest("[data-a]");if(!b)return;depAct(RD[+b.dataset.i],b.dataset.a=="ok")};
-wd.onclick=e=>{let b=e.target.closest("[data-a]");if(!b)return;wdAct(RW[+b.dataset.i],b.dataset.a=="ok")};
-kyc.onclick=e=>{let b=e.target.closest("[data-a]");if(!b)return;kycAct(RK[+b.dataset.i],b.dataset.a=="ok")};
-saveAddr.onclick=async()=>{let v=depAddr.value.trim();if(!v)return toast("أدخل عنوان الإيداع");try{await setDoc(doc(db,"config","deposit"),{address:v,updatedAt:serverTimestamp()},{merge:true});toast("تم حفظ عنوان الإيداع")}catch{toast("فشل الحفظ")}};
+import{getAuth,signInAnonymously}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+import{getFirestore,collection,query,orderBy,onSnapshot,doc,updateDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+const $=x=>document.getElementById(x),cfg={apiKey:"AIzaSyBIOrNuF0NC5R2UizDd4yGBczeI-VIiR44",authDomain:"quantum-gain.firebaseapp.com",projectId:"quantum-gain",storageBucket:"quantum-gain.firebasestorage.app",messagingSenderId:"128304835273",appId:"1:128304835273:web:e0685d79fe569d7d43bb18",measurementId:"G-9EYFM4WGRC"},app=initializeApp(cfg),auth=getAuth(app),db=getFirestore(app),PIN="123456";let A=[],ON=0;
+signInAnonymously(auth).catch(()=>0);
+const esc=s=>(s??"").toString().replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m])),badge=s=>s=="approved"?["مقبول","a"]:s=="rejected"?["مرفوض","rj"]:["قيد المعالجة","p"],toast=t=>{$("to").textContent=t;$("to").classList.add("s");setTimeout(()=>$("to").classList.remove("s"),1200)};
+function counts(a){$("nAll").textContent=a.length;$("nPen").textContent=a.filter(x=>x.status=="pending").length;$("nApp").textContent=a.filter(x=>x.status=="approved").length;$("nRej").textContent=a.filter(x=>x.status=="rejected").length}
+function render(){let q=$("q").value.trim().toLowerCase(),a=A.filter(x=>!q||[x.requestId,x.email,x.depositAddress,x.statusText,x.status].join(" ").toLowerCase().includes(q));counts(A);$("rows").innerHTML=a.length?a.map(x=>{let b=badge(x.status);return `<div class=c><div class=h><div><div class=amt>${esc(x.amountText||("$"+(+x.amount||0).toFixed(2)))}</div><div class=t>${esc(x.method||"Tether (USDT/TRC20)")}</div></div><div class="st ${b[1]}">${b[0]}</div></div><div class=g><div><div class=t>رقم الطلب</div><div class=v>${esc(x.requestId||"-")}</div></div><div><div class=t>التاريخ</div><div class=v>${esc(x.createdAtText||"-")}</div></div><div><div class=t>الإيميل</div><div class=v>${esc(x.email||"-")}</div></div><div><div class=t>المستخدم</div><div class=v>${esc(x.uid||"-")}</div></div><div><div class=t>العملة</div><div class=v>${esc(x.currency||"USDT")}</div></div><div><div class=t>الشبكة</div><div class=v>${esc(x.network||"TRC20")}</div></div><div><div class=t>المكافأة</div><div class=v>${x.bonusEnabled?"مفعلة":"غير مفعلة"}</div></div><div><div class=t>الحالة النصية</div><div class=v>${esc(x.statusText||"-")}</div></div></div><div class=t>عنوان الإيداع</div><div class=ad>${esc(x.depositAddress||"-")}</div><div class=ac><button class="b cp" data-copy="${esc(x.depositAddress||"")}">نسخ العنوان</button><button class="b pe" data-id="${esc(x.requestId)}" data-uid="${esc(x.uid)}" data-s="pending" data-t="قيد المعالجة">قيد المعالجة</button><button class="b ok" data-id="${esc(x.requestId)}" data-uid="${esc(x.uid)}" data-s="approved" data-t="مقبول">قبول</button><button class="b no" data-id="${esc(x.requestId)}" data-uid="${esc(x.uid)}" data-s="rejected" data-t="مرفوض">رفض</button></div></div>`}).join(""):`<div class="e c">لا توجد طلبات</div>`}
+async function st(id,uid,s,t){try{await updateDoc(doc(db,"deposit_requests",id),{status:s,statusText:t,updatedAt:serverTimestamp()});await updateDoc(doc(db,"users",uid,"deposit_requests",id),{status:s,statusText:t,updatedAt:serverTimestamp()}).catch(()=>0);toast("تم تحديث الحالة")}catch(e){toast("فشل تحديث الحالة")}}
+function start(){if(ON)return;ON=1;$("live").textContent="مباشر";onSnapshot(query(collection(db,"deposit_requests"),orderBy("createdAt","desc")),s=>{A=s.docs.map(d=>d.data());render()})}
+$("enter").onclick=()=>{$("pin").value===PIN?($("login").remove(),start()):$("lmsg").textContent="الكود غير صحيح"};
+$("pin").addEventListener("keydown",e=>e.key=="Enter"&&$("enter").click());
+$("q").oninput=render;
+document.addEventListener("click",async e=>{let b=e.target.closest("button");if(!b)return;if(b.dataset.copy){try{await navigator.clipboard.writeText(b.dataset.copy);toast("تم النسخ")}catch{toast("تعذر النسخ")}}if(b.dataset.id)st(b.dataset.id,b.dataset.uid,b.dataset.s,b.dataset.t)});
 </script></body></html>
